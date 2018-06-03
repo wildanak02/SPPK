@@ -55,6 +55,15 @@
     $HasilAkhirP6 = 1;
 
     //$penanda = 1;
+$listPenyakit = array();
+$listSolusi = array();
+    foreach ($Penyakit as $item) {
+      $listPenyakit[]= $item['penyakit'];
+      $listSolusi[]=$item['solusi'];
+    }
+    //print_r($listPenyakit);
+
+
     foreach ($listGejala as $item) {
       // "$"."p".$item['idPenyakit'] = $item['idGejala'];
 
@@ -190,33 +199,49 @@
     }
 
      
-    echo "hasil akhir 1 = ".($HasilAkhirP1*1/6). "<br>";
+   /* echo "hasil akhir 1 = ".($HasilAkhirP1*1/6). "<br>";
     echo "hasil akhir 2 = ".($HasilAkhirP2*1/6). "<br>";
     echo "hasil akhir 3 = ".($HasilAkhirP3*1/6). "<br>";
     echo "hasil akhir 4 = ".($HasilAkhirP4*1/6). "<br>";
     echo "hasil akhir 5 = ".($HasilAkhirP5*1/6). "<br>";
-    echo "hasil akhir 6 = ".($HasilAkhirP6*1/6). "<br>";
+    echo "hasil akhir 6 = ".($HasilAkhirP6*1/6). "<br>";*/
 
     $hasilAkhir = array();
+   
     $hasilAkhir[0] = $HasilAkhirP1*1/6;
     $hasilAkhir[1] = $HasilAkhirP2*1/6;
     $hasilAkhir[2] = $HasilAkhirP3*1/6;
     $hasilAkhir[3] = $HasilAkhirP4*1/6;
     $hasilAkhir[4] = $HasilAkhirP5*1/6;
     $hasilAkhir[5] = $HasilAkhirP6*1/6;
+  
 
-  /*  for ( $i = 0; $i < 6; $i++ ){
+    for ( $i = 0; $i < 6; $i++ ){
      for ($j = 0; $j < 6; $j++ ){
       if ($hasilAkhir[$i] > $hasilAkhir[$j])
       {
-       $temp = $hasilAkhir[$i];
+
+       $temp = $listPenyakit[$i];
+       $listPenyakit[$i] = $listPenyakit[$j];
+       $listPenyakit[$j] = $temp;
+
+       $temp2 = $listSolusi[$i];
+       $listSolusi[$i] = $listSolusi[$j];
+       $listSolusi[$j] = $temp2;
+
+       $temp3 = $hasilAkhir[$i];
        $hasilAkhir[$i] = $hasilAkhir[$j];
-       $hasilAkhir[$j] = $temp;
+       $hasilAkhir[$j] = $temp3;
      }
    }
- }*/
+ }
 
- print_r($hasilAkhir);
+ //print_r($hasilAkhir);
+ for ($i=0; $i < 6 ; $i++) { 
+   echo $listPenyakit[$i]." dengan nilai : ".$hasilAkhir[$i]."<br>";
+ }
+
+
 /*
     rsort($hasilAkhir);
     print_r($hasilAkhir);
@@ -233,6 +258,8 @@
 
 
     ?>
+    <h2> Kesimpulan ayam mengidap penyakit :<?php echo $listPenyakit[0]; ?></h2>
+    <h3>solusinya : <?php echo $listSolusi[0]; ?></h3>
   </div>
 </body>
 </html>

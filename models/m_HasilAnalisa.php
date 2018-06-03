@@ -103,6 +103,30 @@ class HasilAnalisa
 			return null;
 		}
 	}
+
+	public static function listPenyakit(){
+		$list=[];
+
+		$db = DB::getInstance();
+
+		$req = $db->query("SELECT * FROM penyakit");
+
+
+		foreach ($req as $item) {
+			$list[]=array(
+				'idPenyakit'=>$item['idPenyakit'],
+				'penyakit'=>$item['penyakit'],
+				'solusi'=>$item['solusi']
+
+				);
+		}
+		if (isset($list)) {
+			return $list;
+		} else {
+			return null;
+		}
+	}
+
 	public static function checkGejala($checkGejala){
 		$list=[];
 		$list=$checkGejala;
