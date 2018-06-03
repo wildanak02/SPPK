@@ -35,6 +35,15 @@ class Gejala
 	  		return $list;
 	  }
 
+		public static function editGejala($idGejala,$gejala)
+		{
+			$db = DB::getInstance();
+
+			$req = $db->query("UPDATE gejala SET gejala='".$gejala."' WHERE idGejala='$idGejala'");
+			return $req;
+		}
+
+
 
 		public static function hapusGejala($idGejala){
 	$db = DB::getInstance();

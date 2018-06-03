@@ -110,6 +110,14 @@ input[type="submit"]:hover {
   background: #16aa56;
 }
 
+input[type="button"] {
+  border: 0;
+  width: 250px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+}
 .create {
   margin-top: 30px;
   display: block;
@@ -220,6 +228,16 @@ input[type="submit"]:hover {
   background-image: url('../../images/btn/solusi2.png');
 }
 
+.menu .btncocok{
+  background-image: url('../../images/btn/cocok1.png');
+  height: 325px;
+   width: 325px;
+   transition: 0.3s;
+}
+
+.menu .btncocok:hover{
+  background-image: url('../../images/btn/cocok2.png');
+}
 
 .menu .btnlogout{
   background-image: url('../../images/btn/logout1.png');

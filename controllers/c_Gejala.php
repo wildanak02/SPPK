@@ -11,6 +11,11 @@ Class GejalaController{
 		header("location:index.php?controller=Gejala&action=home&success= Gejala berhasil ditambahkan!");
 	}
 
+	public function editGejala(){
+		$posts=Gejala::editGejala($_POST["idGejala"],$_POST["gejala"]);
+		header("location:index.php?controller=Gejala&action=home&success= Gejala berhasil diubah!");
+	}
+
 	public function hapusGejala(){
 		$posts=Gejala::hapusGejala($_GET["idGejala"]);
 		header("location:index.php?controller=Gejala&action=home&success= Gejala berhasil dihapus!");

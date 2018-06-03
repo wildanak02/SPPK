@@ -3,15 +3,17 @@ class Cocok
 {
 	public $idCocok;
 	public $idGejala;
-public $idPenyakit;
+	public $idPenyakit;
+	public $penyakit;
 
 
 
-	function __construct($idCocok,$idGejala,$idPenyakit)
+	function __construct($idCocok,$idGejala,$idPenyakit,$penyakit)
 	{
-$this->idCocok=$idCocok;
-$this->idGejala=$idGejala;
-$this->idPenyakit=$idPenyakit;
+		$this->idCocok=$idCocok;
+		$this->idGejala=$idGejala;
+		$this->idPenyakit=$idPenyakit;
+		$this->penyakit=$penyakit;
 	}
 
 	public static function tambahCocok($idPenyakit,$idGejala){
@@ -24,34 +26,34 @@ $this->idPenyakit=$idPenyakit;
 			$req = $db->query("INSERT INTO cocok
 				VALUES (NULL,'".$gejala[$i]."','".$idPenyakit."');
 				");
+			}
+
+
+			return $req;
 		}
+
+		public static function viewCocok(){
+			$list = [];
+
+			$db = DB::getInstance();
+
+			$req = $db->query("SELECT * FROM cocok join penyakit on cocok.idPenyakit=penyakit.idPenyakit");
+			foreach ($req->fetchAll() as $cocok) {
+				$list[] = new Cocok($cocok['idCocok'],$cocok['idGejala'],$cocok['idPenyakit'],$cocok['penyakit']
+			);
+		}
+		return $list;
+	}
+
+	
+	public static function hapusCocok($idCocok){
+		$db = DB::getInstance();
+
+		$req = $db->query("DELETE FROM cocok WHERE idCocok='$idCocok'");
 
 
 		return $req;
 	}
-
-	// public static function viewGejala(){
-	//     $list = [];
-	//
-	// 		$db = DB::getInstance();
-	//
-	// 		$req = $db->query("SELECT * FROM gejala");
-	//     foreach ($req->fetchAll() as $gejala) {
-	//   			$list[] = new Gejala($gejala['idGejala'],$gejala['gejala']
-	//   				);
-	//   		}
-	//   		return $list;
-	//   }
-//
-//
-// 		public static function hapusGejala($idGejala){
-// 	$db = DB::getInstance();
-//
-// 	$req = $db->query("DELETE FROM gejala WHERE idGejala='$idGejala'");
-//
-//
-// 		return $req;
-// }
 
 
 }
