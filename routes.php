@@ -20,6 +20,7 @@ function call($controller, $action){
 		case 'Analisa':
 		$controller=new AnalisaController();
 		require_once('models/m_Gejala.php');
+		require_once ('models/m_Analisa.php');
 		break;
 
 		case 'Gejala':
@@ -39,6 +40,14 @@ function call($controller, $action){
 		require_once('models/m_Cocok.php');
 		break;
 
+		case 'HasilAnalisa':
+		$controller=new HasilAnalisaController();
+/*		require_once('models/m_Penyakit.php');
+		require_once('models/m_Gejala.php');
+		require_once('models/m_Cocok.php');*/
+		require_once ('models/m_HasilAnalisa.php');
+		break;
+
 	}
 	$controller->{ $action }();
 }
@@ -46,10 +55,11 @@ function call($controller, $action){
 $controllers = array('Login' => ['home','authentication'],
 'Home' => ['home','homeAdmin'],
 'Register' => ['home','register'],
-'Analisa' => ['home'],
+'Analisa' => ['home','hasilAnalisa'],
 'Gejala' => ['home','tambahGejala','klikEditGejala','hapusGejala'],
 'Penyakit' => ['home','tambahPenyakit','editPenyakit','hapusPenyakit'],
-'Cocok' => ['home','tambahCocok']
+'Cocok' => ['home','tambahCocok'],
+'HasilAnalisa'=>['hasilAnalisa']
 	);
 
 

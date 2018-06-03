@@ -7,23 +7,31 @@
   <div class="well wells">
     <a class="kembali" href="?controller=Home&action=home">← Kembali</a>
     <br>
-    <form class="form-horizontal" action="/action_page.php">
-      <div class="form-group">
-        <label class="control-label col-lg-3">Kode Analisa :</label>
-        <div class="col-lg-9">
-          <input type="text" name="kodeAnalisa" class="form-control" value="GORONG" disabled >
+    <form class="form-horizontal" role="form" method="POST">
+
+     <input class="hidden" name="controller" value="HasilAnalisa"></input>
+     <input class="hidden" name="action" value="hasilAnalisa"></input>
+
+     <div class="form-group">
+      <label class="control-label col-lg-3">Kode Analisa :</label>
+      <div class="col-lg-9">
+        <?php foreach ($kodeAnalisa as $item) {
+
+          ?>
+          <input type="text" name="kodeAnalisa" class="form-control" value="<?php echo "KD00".$item["kodeAnalisa"]; ?>" disabled >
+          <?php }  ?>
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-lg-3">Nama Ayam :</label>
         <div class="col-lg-9">
-          <input type="text" name="namaAyam" class="form-control" placeholder="Ketik disini.." >
+          <!-- <input type="text" name="namaAyam" class="form-control" placeholder="Ketik disini.." > -->
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-lg-3">Tanggal :</label>
         <div class="col-lg-9">
-          <input type="date" name="tanggalAnalisa" class="form-control" placeholder="Ketik disini.." >
+       <!--    <input type="date" name="tanggalAnalisa" class="form-control" placeholder="Ketik disini.." > -->
         </div>
       </div>
 
@@ -44,9 +52,9 @@
             <tr>
               <td>G<?php echo $gejala->idGejala; ?></td>
               <td><?php echo $gejala->gejala; ?></td>
-              <td><input value="<?php echo $gejala->idGejala; ?>" type="checkbox" name="checkgejala"></td>
+              <td><input value="<?php echo $gejala->idGejala; ?>" type="checkbox" name="checkGejala[]"></td>
             </tr>
-  <?php } ?>
+            <?php } ?>
           </tbody>
         </table>
         <!--Table-->
