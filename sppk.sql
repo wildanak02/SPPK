@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04 Jun 2018 pada 02.27
+-- Generation Time: 04 Jun 2018 pada 07.59
 -- Versi Server: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -46,28 +46,95 @@ INSERT INTO `analisa` (`idAnalisa`, `idUser`, `kodeAnalisa`, `namaAyam`, `tangga
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `cocok`
+--
+
+CREATE TABLE `cocok` (
+  `idCocok` int(11) NOT NULL,
+  `idGejala` int(11) NOT NULL,
+  `idPenyakit` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `cocok`
+--
+
+INSERT INTO `cocok` (`idCocok`, `idGejala`, `idPenyakit`) VALUES
+(1, 1, 1),
+(2, 2, 1),
+(3, 3, 1),
+(4, 4, 1),
+(5, 5, 1),
+(6, 6, 1),
+(7, 7, 1),
+(8, 5, 2),
+(9, 7, 2),
+(10, 8, 2),
+(11, 9, 2),
+(12, 10, 2),
+(13, 1, 3),
+(14, 2, 3),
+(15, 7, 3),
+(16, 9, 3),
+(17, 11, 3),
+(18, 12, 3),
+(19, 8, 4),
+(20, 9, 4),
+(21, 13, 4),
+(22, 14, 4),
+(23, 15, 4),
+(24, 16, 4),
+(25, 17, 4),
+(26, 1, 5),
+(27, 2, 5),
+(28, 9, 5),
+(29, 10, 5),
+(30, 18, 5),
+(31, 19, 5),
+(32, 20, 5),
+(33, 1, 6),
+(34, 2, 6),
+(35, 9, 6),
+(36, 15, 6),
+(37, 19, 6),
+(38, 20, 6);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `gejala`
 --
 
 CREATE TABLE `gejala` (
   `idGejala` int(11) NOT NULL,
-  `gejala` varchar(255) NOT NULL,
-  `idPenyakit` int(11) NOT NULL
+  `gejala` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `gejala`
 --
 
-INSERT INTO `gejala` (`idGejala`, `gejala`, `idPenyakit`) VALUES
-(2, 'cobaa1', 2),
-(3, 'coba5', 2),
-(4, 'asd', 2),
-(5, 'asd', 2),
-(6, 'asdasd', 2),
-(7, 'asdasd', 2),
-(8, 'ASDASD', 2),
-(9, 'ASDASD', 2);
+INSERT INTO `gejala` (`idGejala`, `gejala`) VALUES
+(1, 'Diare'),
+(2, 'Sesak nafas'),
+(3, 'Sekresi hidung'),
+(4, 'Bulu kusam'),
+(5, 'Rongga hidung kotor dan atau berair'),
+(6, 'Menggigil kedinginan'),
+(7, 'Batuk'),
+(8, 'Nafas berbunyi atau ngorok'),
+(9, 'Nafsu makan menurun'),
+(10, 'Ayam menggelengkan kepala'),
+(11, 'Ayam lesu dan tidak bergairah'),
+(12, 'Bulu kasar'),
+(13, 'Muka dan mata bengkak akibat pembengakakan sinus infra global'),
+(14, 'Terdapat kerak dihidung'),
+(15, 'Ayam terlihat mengantuk'),
+(16, 'Keluar lendir dari hidung kental berwarna kuning'),
+(17, 'Pertumbuhan menjadi lambat'),
+(18, 'Warna kotoran kuning'),
+(19, 'Jengger berwarna biru'),
+(20, 'Persendian kaki dan sayap bengkak disertai kelumpuhan');
 
 -- --------------------------------------------------------
 
@@ -86,15 +153,12 @@ CREATE TABLE `penyakit` (
 --
 
 INSERT INTO `penyakit` (`idPenyakit`, `penyakit`, `solusi`) VALUES
-(2, 'coba2', 'coba2'),
-(3, 'coba3', 'coba3'),
-(4, 'coba4', 'coba4'),
-(5, 'coba5', 'coba5'),
-(6, 'coba6', 'coba6'),
-(7, 'coba7', 'coba7'),
-(8, 'coba8', 'coba8'),
-(9, 'coban9', 'coba9'),
-(10, 'cobad', 'cobad');
+(1, 'Chlamydiosis', 'Pencegahan dan pengendalian dapat dilakukan dengan tindakan biosekuriti dengan peningkatan sanitasi dan kebersihan kandang. Pengobatan psittacosis dapat menggunakan khlortetrasiklin dengan dosis 2 mg/hari selama 21 hari.'),
+(2, 'Chronic Respiratory Disease (CRD)', 'Obat-obatan yang dapat dipergunakan untuk penyakit ini diantaranya ialah tylosin, spiramycin, oxytetracyclin, streptomycin, spektinomisin, linkomisin, dan beberapa golongan kuinolon seperti enrofloksasin dan norflosasin. Pencegahan dilakukan dengan penera'),
+(3, 'Colibacillosis', 'Pencegahan dapat dimulai dari seleksi secara ketat ayam yang berkualitas pada awal pemeliharaan dan mencegah pencemaran bakteri pada air minum ataupun pakan. Pengobatan Colibacillosis dengan pemberian antibiotik. Beberapa serotipe E.coli seringkali resist'),
+(4, 'Coryza', 'Cara yang paling baik untuk mencegah terjadinya penyakit ini dengan melaksanakan sanitasi dan manajemen peternakan yang baik. Pengobatan pada suatu flok dengan sulfonamide atau antibiotik direkomendasikan. Berbagai macam sulfonamide seperti sulfadimethoxi'),
+(5, ' Kolera', 'Tindakan pencegahan dan pengendalian dapat dilakukan dengan jalan vaksinasi, sanitasi peternakan, dan adanya hewan sakit harus segera dipisahkan dan diobati. Pengobatan kolera unggas dapat menggunakan antimikroba ; Sulfaquinoxalin 0,05%, Sulfametasin dan '),
+(6, 'Pullorum', 'Pencegahan diutamakan pada sanitasi dan tata laksana serta manajemen pemeliharaan yang baik. Pengobatan pullorum dapat dilakukan dengan penyuntikan antibiotik seperti cocillin, neo terramycin ke dada ayam.');
 
 -- --------------------------------------------------------
 
@@ -129,6 +193,12 @@ ALTER TABLE `analisa`
   ADD PRIMARY KEY (`idAnalisa`);
 
 --
+-- Indexes for table `cocok`
+--
+ALTER TABLE `cocok`
+  ADD PRIMARY KEY (`idCocok`);
+
+--
 -- Indexes for table `gejala`
 --
 ALTER TABLE `gejala`
@@ -156,15 +226,20 @@ ALTER TABLE `user`
 ALTER TABLE `analisa`
   MODIFY `idAnalisa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `cocok`
+--
+ALTER TABLE `cocok`
+  MODIFY `idCocok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+--
 -- AUTO_INCREMENT for table `gejala`
 --
 ALTER TABLE `gejala`
-  MODIFY `idGejala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idGejala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `penyakit`
 --
 ALTER TABLE `penyakit`
-  MODIFY `idPenyakit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idPenyakit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `user`
 --
