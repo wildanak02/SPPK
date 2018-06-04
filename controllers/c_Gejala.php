@@ -2,14 +2,12 @@
 Class GejalaController{
 
 	public function home(){
-		$penyakits=Penyakit::viewPenyakit();
 		$gejalas=Gejala::viewGejala();
 		require_once("views/v_AdminGejala.php");
 	}
 
 	public function tambahGejala(){
-		$gejalas = Gejala::tambahGejala($_POST["gejala"],$_POST["idPenyakit"]);
-
+		$gejalas = Gejala::tambahGejala($_POST["gejala"]);
 		header("location:index.php?controller=Gejala&action=home&success= Gejala berhasil ditambahkan!");
 	}
 

@@ -59,16 +59,6 @@
                   <input type="textbox" class="form-control" name="gejala" placeholder="Ketik disini.." >
                 </div>
               </div>
-              <div class="form-group">
-                <label class="control-label col-lg-4">Pilih Jenis Penyakit :</label>
-                <div class="col-lg-8">
-                  <select name="idPenyakit" class="form-control">
-                      <?php foreach ($penyakits as $penyakit) {?>
-                    <option  value="<?php echo $penyakit->idPenyakit; ?>"><?php echo $penyakit->penyakit; ?></option>
-                    <?php } ?>
-                  </select>
-                </div>
-              </div>
             </div>
             <div class="modal-footer">
               <button type="submit" class="btn btn-success">Tambahkan</button>
@@ -102,16 +92,6 @@
                       <input type="textbox" class="form-control" id="gejala" name="gejala" placeholder="Ketik disini.." >
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="control-label col-lg-4">Pilih Jenis Penyakit :</label>
-                    <div class="col-lg-8">
-                      <select id="idPenyakit" name="idPenyakit" class="form-control">
-                          <?php foreach ($penyakits as $penyakit) {?>
-                        <option  value="<?php echo $penyakit->idPenyakit; ?>"><?php echo $penyakit->penyakit; ?></option>
-                        <?php } ?>
-                      </select>
-                    </div>
-                  </div>
                 </div>
                 <div class="modal-footer">
                   <button type="submit" class="btn btn-success">Simpan</button>
@@ -135,7 +115,6 @@
 
             $("#idGejala").val("<?php echo $dat->idGejala; ?>");
             $("#gejala").val("<?php echo $dat->gejala; ?>");
-            $("#idPenyakit").val("<?php echo $dat->idPenyakit; ?>");
         }
         <?php
         }

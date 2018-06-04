@@ -24,13 +24,19 @@ function call($controller, $action){
 
 		case 'Gejala':
 		$controller=new GejalaController();
-		require_once('models/m_Penyakit.php');
 		require_once('models/m_Gejala.php');
 		break;
 
 		case 'Penyakit':
 		$controller=new PenyakitController();
 		require_once('models/m_Penyakit.php');
+		break;
+
+		case 'Cocok':
+		$controller=new CocokController();
+		require_once('models/m_Penyakit.php');
+		require_once('models/m_Gejala.php');
+		require_once('models/m_Cocok.php');
 		break;
 
 	}
@@ -42,7 +48,8 @@ $controllers = array('Login' => ['home','authentication'],
 'Register' => ['home','register'],
 'Analisa' => ['home'],
 'Gejala' => ['home','tambahGejala','klikEditGejala','hapusGejala'],
-'Penyakit' => ['home','tambahPenyakit','editPenyakit','hapusPenyakit']
+'Penyakit' => ['home','tambahPenyakit','editPenyakit','hapusPenyakit'],
+'Cocok' => ['home','tambahCocok']
 	);
 
 
