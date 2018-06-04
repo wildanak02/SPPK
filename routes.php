@@ -49,7 +49,7 @@ $controllers = array('Login' => ['home','authentication'],
 'Analisa' => ['home'],
 'Gejala' => ['home','tambahGejala','klikEditGejala','hapusGejala'],
 'Penyakit' => ['home','tambahPenyakit','editPenyakit','hapusPenyakit'],
-'Cocok' => ['home','tambahCocok']
+'Cocok' => ['home','tambahCocok','hapusCocok']
 	);
 
 

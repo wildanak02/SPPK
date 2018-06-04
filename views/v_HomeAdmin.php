@@ -25,7 +25,7 @@
 
         <div class="col-lg-3">
         <a href="?controller=Cocok&action=home">
-          <div class="btnhistory" ></div>
+          <div class="btncocok" ></div>
         </a>
         </div>
 
