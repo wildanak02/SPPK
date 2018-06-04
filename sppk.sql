@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03 Jun 2018 pada 13.10
+-- Generation Time: 04 Jun 2018 pada 02.27
 -- Versi Server: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -23,14 +23,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ayam`
+-- Struktur dari tabel `analisa`
 --
 
-CREATE TABLE `ayam` (
-  `idAyam` int(11) NOT NULL,
+CREATE TABLE `analisa` (
+  `idAnalisa` int(11) NOT NULL,
+  `idUser` int(11) NOT NULL,
+  `kodeAnalisa` varchar(255) NOT NULL,
   `namaAyam` varchar(255) NOT NULL,
-  `jenisAyam` varchar(255) NOT NULL
+  `tanggalAnalisa` date NOT NULL,
+  `idGejala` int(11) NOT NULL,
+  `hasil` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `analisa`
+--
+
+INSERT INTO `analisa` (`idAnalisa`, `idUser`, `kodeAnalisa`, `namaAyam`, `tanggalAnalisa`, `idGejala`, `hasil`) VALUES
+(1, 1, 'coba', 'coba', '2018-06-12', 1, 'coba');
 
 -- --------------------------------------------------------
 
@@ -40,24 +51,23 @@ CREATE TABLE `ayam` (
 
 CREATE TABLE `gejala` (
   `idGejala` int(11) NOT NULL,
-  `gejala` varchar(255) NOT NULL
+  `gejala` varchar(255) NOT NULL,
+  `idPenyakit` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `gejala`
 --
 
-INSERT INTO `gejala` (`idGejala`, `gejala`) VALUES
-(1, 'coba'),
-(2, 'coba2'),
-(3, 'coba3'),
-(4, 'coba4'),
-(5, 'coba5'),
-(6, 'coba6'),
-(8, 'coba7'),
-(9, 'coba8'),
-(10, 'coba9'),
-(11, 'coba10');
+INSERT INTO `gejala` (`idGejala`, `gejala`, `idPenyakit`) VALUES
+(2, 'cobaa1', 2),
+(3, 'coba5', 2),
+(4, 'asd', 2),
+(5, 'asd', 2),
+(6, 'asdasd', 2),
+(7, 'asdasd', 2),
+(8, 'ASDASD', 2),
+(9, 'ASDASD', 2);
 
 -- --------------------------------------------------------
 
@@ -68,20 +78,23 @@ INSERT INTO `gejala` (`idGejala`, `gejala`) VALUES
 CREATE TABLE `penyakit` (
   `idPenyakit` int(11) NOT NULL,
   `penyakit` varchar(255) NOT NULL,
-  `idGejala` int(11) NOT NULL,
-  `idSolusi` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `solusi`
---
-
-CREATE TABLE `solusi` (
-  `idSolusi` int(11) NOT NULL,
   `solusi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `penyakit`
+--
+
+INSERT INTO `penyakit` (`idPenyakit`, `penyakit`, `solusi`) VALUES
+(2, 'coba2', 'coba2'),
+(3, 'coba3', 'coba3'),
+(4, 'coba4', 'coba4'),
+(5, 'coba5', 'coba5'),
+(6, 'coba6', 'coba6'),
+(7, 'coba7', 'coba7'),
+(8, 'coba8', 'coba8'),
+(9, 'coban9', 'coba9'),
+(10, 'cobad', 'cobad');
 
 -- --------------------------------------------------------
 
@@ -110,10 +123,10 @@ INSERT INTO `user` (`idUser`, `level`, `username`, `password`, `nama`) VALUES
 --
 
 --
--- Indexes for table `ayam`
+-- Indexes for table `analisa`
 --
-ALTER TABLE `ayam`
-  ADD PRIMARY KEY (`idAyam`);
+ALTER TABLE `analisa`
+  ADD PRIMARY KEY (`idAnalisa`);
 
 --
 -- Indexes for table `gejala`
@@ -128,12 +141,6 @@ ALTER TABLE `penyakit`
   ADD PRIMARY KEY (`idPenyakit`);
 
 --
--- Indexes for table `solusi`
---
-ALTER TABLE `solusi`
-  ADD PRIMARY KEY (`idSolusi`);
-
---
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -144,25 +151,20 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `ayam`
+-- AUTO_INCREMENT for table `analisa`
 --
-ALTER TABLE `ayam`
-  MODIFY `idAyam` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `analisa`
+  MODIFY `idAnalisa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `gejala`
 --
 ALTER TABLE `gejala`
-  MODIFY `idGejala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idGejala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `penyakit`
 --
 ALTER TABLE `penyakit`
-  MODIFY `idPenyakit` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `solusi`
---
-ALTER TABLE `solusi`
-  MODIFY `idSolusi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPenyakit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `user`
 --
