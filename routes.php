@@ -17,6 +17,11 @@ function call($controller, $action){
 		$controller=new RegisterController();
 		break;
 
+		case 'Profile':
+		require_once('models/m_User.php');
+		$controller=new ProfileController();
+		break;
+
 		case 'Analisa':
 		$controller=new AnalisaController();
 		require_once('models/m_Gejala.php');
@@ -46,8 +51,9 @@ function call($controller, $action){
 $controllers = array('Login' => ['home','authentication'],
 'Home' => ['home','homeAdmin'],
 'Register' => ['home','register'],
+'Profile' => ['home','editUser'],
 'Analisa' => ['home'],
-'Gejala' => ['home','tambahGejala','klikEditGejala','hapusGejala'],
+'Gejala' => ['home','tambahGejala','editGejala','hapusGejala'],
 'Penyakit' => ['home','tambahPenyakit','editPenyakit','hapusPenyakit'],
 'Cocok' => ['home','tambahCocok','hapusCocok']
 	);
