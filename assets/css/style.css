@@ -1,0 +1,272 @@
+/* login */
+body {
+  background-image: url("../../images/back.jpg");
+  background-size: 100% 100%;
+  color: #46485c;
+  font-family: sans-serif;
+}
+
+h2 {
+  color: #46485c;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+a {
+  color: #46485c;
+  text-decoration: none;
+}
+
+.login {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -184px 0px 0px -155px;
+  background: #CDCDCD;
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 0px rgba(0,0,0,0.3),inset 0px 1px 0px rgba(255,255,255,0.07);
+  transition: 0.3s;
+  opacity: 0.7;
+}
+
+.login:hover  {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -184px 0px 0px -155px;
+  background: #CDCDCD;
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 0px rgba(0,0,0,0.3),inset 0px 1px 0px rgba(255,255,255,0.07);
+  opacity: 1;
+}
+
+input[type="text"], input[type="password"] {
+  width: 250px;
+  padding: 25px 0px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  outline: none;
+  color: #fff;
+}
+
+.login input[type="text"], input[type="password"] {
+  width: 250px;
+  padding: 25px 0px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  outline: none;
+  color: #000;
+}
+
+input[type="textbox"] {
+  width: 350px;
+  padding: 25px 0px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  outline: none;
+  color: #fff;
+}
+
+input[type="text"]:disabled{
+  width: 250px;
+  padding: 25px 0px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  outline: none;
+  color: #fff;
+}
+
+input[type="date"]{
+  width: 250px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  outline: none;
+  color: #fff;
+}
+
+
+input[type="submit"] {
+  background: #b5cd60;
+  border: 0;
+  width: 250px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+input[type="submit"]:hover {
+  background: #16aa56;
+}
+
+.create {
+  margin-top: 30px;
+  display: block;
+  font-size: 11px;
+  text-align: center;
+  font-weight: bold;
+}
+.create:hover {
+  margin-top: 30px;
+  display: block;
+  font-size: 11px;
+  text-align: center;
+  font-weight: bold;
+  color: #6d7781;
+}
+
+.kembali {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+.kembali:hover {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #6d7781;
+}
+
+
+::-webkit-input-placeholder {
+  color: #46485c;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: all 0.2s linear;
+  transform: translate(10px, 0);
+  opacity: 0;
+}
+
+/* home*/
+.menu {
+  margin: 20px 30px 20px 30px;
+}
+.menu .btnanalisa{
+  background-image: url('../../images/btn/analisa1.png');
+  height: 325px;
+   width: 325px;
+   transition: 0.3s;
+}
+
+.menu .btnanalisa:hover{
+  background-image: url('../../images/btn/analisa2.png');
+}
+
+.menu .btnhistory{
+  background-image: url('../../images/btn/history1.png');
+  height: 325px;
+   width: 325px;
+   transition: 0.3s;
+}
+
+.menu .btnhistory:hover{
+  background-image: url('../../images/btn/history2.png');
+}
+
+.menu .btnprofile{
+  background-image: url('../../images/btn/profile1.png');
+  height: 325px;
+   width: 325px;
+   transition: 0.3s;
+}
+
+.menu .btnprofile:hover{
+  background-image: url('../../images/btn/profile2.png');
+}
+
+.menu .btngejala{
+  background-image: url('../../images/btn/gejala1.png');
+  height: 325px;
+   width: 325px;
+   transition: 0.3s;
+}
+
+.menu .btngejala:hover{
+  background-image: url('../../images/btn/gejala2.png');
+}
+
+.menu .btnpenyakit{
+  background-image: url('../../images/btn/penyakit1.png');
+  height: 325px;
+   width: 325px;
+   transition: 0.3s;
+}
+
+.menu .btnpenyakit:hover{
+  background-image: url('../../images/btn/penyakit2.png');
+}
+
+.menu .btnsolusi{
+  background-image: url('../../images/btn/solusi1.png');
+  height: 325px;
+   width: 325px;
+   transition: 0.3s;
+}
+
+.menu .btnsolusi:hover{
+  background-image: url('../../images/btn/solusi2.png');
+}
+
+
+.menu .btnlogout{
+  background-image: url('../../images/btn/logout1.png');
+  height: 325px;
+   width: 325px;
+   transition: 0.3s;
+}
+
+.menu .btnlogout:hover{
+  background-image: url('../../images/btn/logout2.png');
+}
+
+/* analisa */
+.wells {
+  width: 800px;
+  height: 600px;
+  background-color: #212121;
+  color: #fff;
+  border-radius: 2%;
+  border: none;
+  margin: 50px 50px 0px 300px;
+  padding: 40px 40px 20px 20px;
+}
+
+.table-wrapper-2 {
+    display: block;
+    max-height: 250px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar
+}
+
+.table-wrapper-3 {
+    display: block;
+    max-height: 400px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar
+}
+
+.table {
+  color: #fff;
+}
+
+.table thead{
+  background-color: #676767;
+}
+
+/* modal */
+.modal-content {
+  background-color: #212121;
+}
