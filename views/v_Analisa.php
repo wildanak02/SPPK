@@ -17,21 +17,22 @@
       <div class="col-lg-9">
         <?php foreach ($kodeAnalisa as $item) {
 
+          $kode = $item["kodeAnalisa"]+1;
           ?>
-          <input type="text" name="kodeAnalisa" class="form-control" value="<?php echo "KD00".$item["kodeAnalisa"]; ?>" disabled >
+          <input type="text" name="kodeAnalisa" class="form-control" value="<?php echo "KD00".$kode; ?>" readonly >
           <?php }  ?>
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-lg-3">Nama Ayam :</label>
         <div class="col-lg-9">
-          <!-- <input type="text" name="namaAyam" class="form-control" placeholder="Ketik disini.." > -->
+          <input type="text" name="namaAyam" class="form-control" placeholder="Ketik disini.." >
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-lg-3">Tanggal :</label>
         <div class="col-lg-9">
-       <!--    <input type="date" name="tanggalAnalisa" class="form-control" placeholder="Ketik disini.." > -->
+          <input type="date" name="tanggalAnalisa" class="form-control" placeholder="Ketik disini.." >
         </div>
       </div>
 

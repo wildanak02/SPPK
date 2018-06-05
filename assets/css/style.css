@@ -76,7 +76,7 @@ input[type="textbox"] {
   color: #fff;
 }
 
-input[type="text"]:disabled{
+input[type="text"]:disabled,input[type="text"]:read-only{
   width: 250px;
   padding: 25px 0px;
   background: transparent;
