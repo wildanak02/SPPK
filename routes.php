@@ -65,14 +65,9 @@ $controllers = array('Login' => ['home','authentication'],
 'Analisa' => ['home','hasilAnalisa'],
 'Gejala' => ['home','tambahGejala','editGejala','hapusGejala'],
 'Penyakit' => ['home','tambahPenyakit','editPenyakit','hapusPenyakit'],
-<<<<<<< HEAD
-'Cocok' => ['home','tambahCocok'],
-'HasilAnalisa'=>['hasilAnalisa','simpanHasilAnalisa']
-=======
 'Cocok' => ['home','tambahCocok','hapusCocok'],
-'HasilAnalisa'=>['hasilAnalisa']
+'HasilAnalisa'=>['hasilAnalisa','simpanHasilAnalisa']
 
->>>>>>> c852b0e46d98dc5b11c216bbebfbc8c087ccbcdc
 	);
 
 
