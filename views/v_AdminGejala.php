@@ -86,6 +86,7 @@
                 <form class="form-horizontal" role="form" method="POST">
                   <input class="hidden" name="controller" value="Gejala"></input>
                   <input class="hidden" name="action" value="editGejala"></input>
+                  <input class="hidden" id="idGejala" name="idGejala"></input>
                   <div class="form-group">
                     <label class="control-label col-lg-4">Masukkan Gejala :</label>
                     <div class="col-lg-8">
