@@ -237,9 +237,11 @@ $listSolusi = array();
  }
 
  //print_r($hasilAkhir);
- for ($i=0; $i < 6 ; $i++) { 
-   echo $listPenyakit[$i]." dengan nilai : ".$hasilAkhir[$i]."<br>";
- }
+
+
+   
+ 
+
 
 
 /*
@@ -258,8 +260,56 @@ $listSolusi = array();
 
 
     ?>
-    <h2> Kesimpulan ayam mengidap penyakit :<?php echo $listPenyakit[0]; ?></h2>
-    <h3>solusinya : <?php echo $listSolusi[0]; ?></h3>
+<form class="form-horizontal" role="form" method="POST">
+  <input class="hidden" name="controller" value="HasilAnalisa"></input>
+  <input class="hidden" name="action" value="simpanHasilAnalisa"></input>
+  <input class="hidden" name="kodeAnalisa" class="form-control" value="<?php echo $kodeAnalisa; ?>" >
+  <input class="hidden" name="tanggalAnalisa" class="form-control" value="<?php echo $tanggalAnalisa; ?>" >
+  <input class="hidden" name="namaAyam" class="form-control" value="<?php echo $namaAyam; ?>" >
+
+
+
+    <div class="table-wrapper-2">
+
+        <!--Table-->
+        <table class="table table-responsive-md">
+          <thead>
+            <tr>
+            <th class="th-lg">Rank</th>
+              <th class="th-lg">Nama Penyakit</th>
+              <th class="th-lg">nilai</th>
+              
+
+            </tr>
+          </thead>
+          <tbody>
+            <?php  for ($i=0; $i < 6 ; $i++) { ?>
+            <tr>
+              <td><?php echo $i+1; ?></td>
+              <td><?php echo $listPenyakit[$i]; ?></td>
+              <td><?php echo number_format($hasilAkhir[$i],10); ?></td>
+
+            </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+        <!--Table-->
+
+      </div>
+
+
+    <h3> Kesimpulan ayam mengidap penyakit : <?php echo " ".$listPenyakit[0]; ?> </h3>
+    <input type="hidden" name="hasilAnalisa" value="<?php echo $listPenyakit[0]; ?>"></input>
+    <h4>solusinya :<?php echo " ".$listSolusi[0]; ?></h4> <br>
+     <button type="submit" class="btn btn-success btn-block">SIMPAN ANALISA</button>
+</form>
+ <!--  <?php foreach ($x as $item) {
+ 
+      echo $item['Penyakit2']."<br>";
+    
+    } ?>  -->
+
+   <!--  <?php print_r($x); ?> -->
   </div>
 </body>
 </html>

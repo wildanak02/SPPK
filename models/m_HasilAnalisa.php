@@ -140,6 +140,16 @@ class HasilAnalisa
 		
 	}
 
+	public static function simpanHasilAnalisa($kodeAnalisa,$namaAyam,$tanggalAnalisa,$hasil){
+
+		$db = DB::getInstance();
+		$req = $db->query("INSERT INTO analisa
+			VALUES (NULL,5,'".$kodeAnalisa."','".$namaAyam."','".$tanggalAnalisa."','".$hasil."');
+			");
+
+		return $req;
+	}
+
 
 }
 
