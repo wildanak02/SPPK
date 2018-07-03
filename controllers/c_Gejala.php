@@ -18,6 +18,7 @@ Class GejalaController{
 
 	public function hapusGejala(){
 		$posts=Gejala::hapusGejala($_GET["idGejala"]);
+		$posts2=Gejala::reset();
 		header("location:index.php?controller=Gejala&action=home&success= Gejala berhasil dihapus!");
 	}
 }

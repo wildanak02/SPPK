@@ -52,7 +52,18 @@ class Penyakit
 
 		return $req;
 }
+		public static function reset(){
+			$id=0;
+	$db = DB::getInstance();
+	$req = $db->query("SELECT COUNT(`idPenyakit`) as id FROM `penyakit`");
+	foreach ($req as $item) {
+			$id=$item['id'];
+		}
+	$req2 = $db->query("ALTER TABLE penyakit AUTO_INCREMENT = $id");
 
+
+		return $req2;
+}
 
 }
 
