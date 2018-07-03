@@ -33,7 +33,7 @@ class HasilAnalisaController
 
 		$p[];
 
-		for ($i=1; $i < $jumlahP+1 ; $i++) { 
+		for ($i=1; $i < $jumlahP+1 ; $i++) {
 			foreach ($listGejala as $item) {
 				if ($i==$item['idPenyakit']) {
 					// $p=array(
@@ -44,9 +44,9 @@ class HasilAnalisaController
 					// );
 					array_push($p,'Penyakit'.$item['idPenyakit'].'=>'. $item['idGejala']);
 
-			
+
 				}
-				
+
 			}
 
 		}
@@ -65,7 +65,7 @@ class HasilAnalisaController
 
 		$simpan = HasilAnalisa::simpanHasilAnalisa($_POST["kodeAnalisa"],$_POST["namaAyam"],$_POST["tanggalAnalisa"],$_POST["hasilAnalisa"]);
 
-	
+
 
 
 

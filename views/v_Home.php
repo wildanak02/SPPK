@@ -18,7 +18,7 @@
 
         <div class="col-lg-3">
           <div class="btnanalisa" style="visibility: hidden;"></div>
-        <a href="?controller=Analisa&action=home">
+        <a href="?controller=Riwayat&action=home">
           <div class="btnhistory" ></div>
         </a>
         </div>
@@ -31,7 +31,7 @@
 
         <div class="col-lg-3">
           <div class="btnanalisa"  style="visibility: hidden;"></div>
-        <a href="?controller=Login&action=home">
+        <a href="logout.php">
           <div class="btnlogout" ></div>
         </a>
         </div>

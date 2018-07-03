@@ -53,6 +53,11 @@ function call($controller, $action){
 		require_once ('models/m_HasilAnalisa.php');
 		break;
 
+		case 'Riwayat':
+		$controller=new RiwayatController();
+		require_once('models/m_RiwayatAnalisa.php');
+		break;
+
 	}
 	$controller->{ $action }();
 }
@@ -65,7 +70,8 @@ $controllers = array('Login' => ['home','authentication'],
 'Gejala' => ['home','tambahGejala','editGejala','hapusGejala'],
 'Penyakit' => ['home','tambahPenyakit','editPenyakit','hapusPenyakit'],
 'Cocok' => ['home','tambahCocok','hapusCocok'],
-'HasilAnalisa'=>['hasilAnalisa','simpanHasilAnalisa']
+'HasilAnalisa'=>['hasilAnalisa','simpanHasilAnalisa'],
+'Riwayat' => ['home','hapusAnalisa'],
 
 	);
 

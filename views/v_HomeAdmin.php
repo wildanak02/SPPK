@@ -31,13 +31,13 @@
 
         <div class="col-lg-2">
           <div class="btnanalisa"  style="visibility: hidden;"></div>
-          <a href="?controller=Cocok&action=home">
+          <a href="?controller=Riwayat&action=home">
             <div class="btnhistory" ></div>
           </a>
         </div>
 
         <div class="col-lg-2">
-          <a href="?controller=Login&action=home">
+          <a href="logout.php">
             <div class="btnlogout"></div>
           </a>
         </div>
