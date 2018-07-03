@@ -24,6 +24,7 @@ class HasilAnalisaController
 		// $namaAyam=$_POST["namaAyam"];
 
 		$listGejala=HasilAnalisa::listGejala();
+		$jumlahGejala=HasilAnalisa::jumlahGejala();
 
 	/*	foreach ($jumlahPenyakit as $item) {
 			$jumlahP=$item["jumlahPenyakit"];
