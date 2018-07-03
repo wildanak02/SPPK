@@ -9,6 +9,7 @@ class ProfileController
 
   public function editUser(){
 		$posts=User::editUser($_GET["idUser"],$_GET["nama"],$_GET["username"],$_GET["password"]);
+		$_SESSION['login']=$_GET["username"];
 		header("location:index.php?controller=Profile&action=home&success= Data user berhasil diubah!");
 	}
 

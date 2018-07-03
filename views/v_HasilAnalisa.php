@@ -5,10 +5,10 @@
 <body>
 
   <div class="well wells">
-    <a class="kembali" href="?controller=Home&action=home">← Kembali</a>
+    <a class="kembali" href="?controller=Analisa&action=home">← Kembali</a>
     <br>
     <h1>HASIL ANALISA</h1>
-    <?php 
+    <?php
 
     /*$jumlahP=0;
 
@@ -21,8 +21,8 @@
        "$"."p".$i;
        "$"."Hasilp".$i;
       foreach ($listGejala as $item) {
-      
-     "$"."p".$item['idPenyakit'] = implode(" ", $item['idGejala']); 
+
+     "$"."p".$item['idPenyakit'] = implode(" ", $item['idGejala']);
      }
    }
 
@@ -67,39 +67,39 @@ $listSolusi = array();
     foreach ($listGejala as $item) {
       // "$"."p".$item['idPenyakit'] = $item['idGejala'];
 
-      
-      
-     
+
+
+
      if ($item['idPenyakit']==1) {
         $p1[]=$item['idGejala'];
      }
        else if ($item['idPenyakit']==2) {
         $p2[]=$item['idGejala'];
-        
+
       }
        else if ($item['idPenyakit']==3) {
         $p3[]=$item['idGejala'];
-        
+
       }
        else if ($item['idPenyakit']==4) {
         $p4[]=$item['idGejala'];
-        
+
       }
        else if ($item['idPenyakit']==5) {
         $p5[]=$item['idGejala'];
-        
+
       }
       else if ($item['idPenyakit']==6) {
         $p6[]=$item['idGejala'];
-        
+
       }
      // $penanda++;
     }
 
-   
+
     //hitung penyakit 1
-    for ($i=0; $i < sizeof($check) ; $i++) { 
-         for ($j=0; $j <sizeof($p1) ; $j++) { 
+    for ($i=0; $i < sizeof($check) ; $i++) {
+         for ($j=0; $j <sizeof($p1) ; $j++) {
 
              // print $check[$i]." dan ".$p1[$j]."<br>";
               if ($check[$i]==$p1[$j]) {
@@ -110,11 +110,11 @@ $listSolusi = array();
                 $Hasilp1[$i] = (0+20*1/6)/(1+20);
               }
          }
-    }  
+    }
 
       //hitung penyakit 2
-    for ($i=0; $i < sizeof($check) ; $i++) { 
-         for ($j=0; $j <sizeof($p2) ; $j++) { 
+    for ($i=0; $i < sizeof($check) ; $i++) {
+         for ($j=0; $j <sizeof($p2) ; $j++) {
 
              // print $check[$i]." dan ".$p1[$j]."<br>";
               if ($check[$i]==$p2[$j]) {
@@ -125,10 +125,10 @@ $listSolusi = array();
                 $Hasilp2[$i] = (0+20*1/6)/(1+20);
               }
          }
-    } 
+    }
       //hitung penyakit 1
-    for ($i=0; $i < sizeof($check) ; $i++) { 
-         for ($j=0; $j <sizeof($p3) ; $j++) { 
+    for ($i=0; $i < sizeof($check) ; $i++) {
+         for ($j=0; $j <sizeof($p3) ; $j++) {
 
              // print $check[$i]." dan ".$p1[$j]."<br>";
               if ($check[$i]==$p3[$j]) {
@@ -139,10 +139,10 @@ $listSolusi = array();
                 $Hasilp3[$i] = (0+20*1/6)/(1+20);
               }
          }
-    } 
+    }
       //hitung penyakit 1
-    for ($i=0; $i < sizeof($check) ; $i++) { 
-         for ($j=0; $j <sizeof($p4) ; $j++) { 
+    for ($i=0; $i < sizeof($check) ; $i++) {
+         for ($j=0; $j <sizeof($p4) ; $j++) {
 
              // print $check[$i]." dan ".$p1[$j]."<br>";
               if ($check[$i]==$p4[$j]) {
@@ -153,10 +153,10 @@ $listSolusi = array();
                 $Hasilp4[$i] = (0+20*1/6)/(1+20);
               }
          }
-    } 
+    }
       //hitung penyakit 1
-    for ($i=0; $i < sizeof($check) ; $i++) { 
-         for ($j=0; $j <sizeof($p5) ; $j++) { 
+    for ($i=0; $i < sizeof($check) ; $i++) {
+         for ($j=0; $j <sizeof($p5) ; $j++) {
 
              // print $check[$i]." dan ".$p1[$j]."<br>";
               if ($check[$i]==$p5[$j]) {
@@ -168,8 +168,8 @@ $listSolusi = array();
               }
          }
        }
-          for ($i=0; $i < sizeof($check) ; $i++) { 
-         for ($j=0; $j <sizeof($p6) ; $j++) { 
+          for ($i=0; $i < sizeof($check) ; $i++) {
+         for ($j=0; $j <sizeof($p6) ; $j++) {
 
              // print $check[$i]." dan ".$p1[$j]."<br>";
               if ($check[$i]==$p6[$j]) {
@@ -180,7 +180,7 @@ $listSolusi = array();
                 $Hasilp6[$i] = (0+20*1/6)/(1+20);
               }
          }
-       } 
+       }
 
 
 
@@ -189,7 +189,7 @@ $listSolusi = array();
     /*print_r($p3)."<br>";
     print_r($check);*/
 
-    for ($i=0; $i < sizeof($check) ; $i++) { 
+    for ($i=0; $i < sizeof($check) ; $i++) {
      $HasilAkhirP1*=$Hasilp1[$i];
      $HasilAkhirP2*=$Hasilp2[$i];
      $HasilAkhirP3*=$Hasilp3[$i];
@@ -198,7 +198,7 @@ $listSolusi = array();
      $HasilAkhirP6*=$Hasilp6[$i];
     }
 
-     
+
    /* echo "hasil akhir 1 = ".($HasilAkhirP1*1/6). "<br>";
     echo "hasil akhir 2 = ".($HasilAkhirP2*1/6). "<br>";
     echo "hasil akhir 3 = ".($HasilAkhirP3*1/6). "<br>";
@@ -207,14 +207,14 @@ $listSolusi = array();
     echo "hasil akhir 6 = ".($HasilAkhirP6*1/6). "<br>";*/
 
     $hasilAkhir = array();
-   
+
     $hasilAkhir[0] = $HasilAkhirP1*1/6;
     $hasilAkhir[1] = $HasilAkhirP2*1/6;
     $hasilAkhir[2] = $HasilAkhirP3*1/6;
     $hasilAkhir[3] = $HasilAkhirP4*1/6;
     $hasilAkhir[4] = $HasilAkhirP5*1/6;
     $hasilAkhir[5] = $HasilAkhirP6*1/6;
-  
+
 
     for ( $i = 0; $i < 6; $i++ ){
      for ($j = 0; $j < 6; $j++ ){
@@ -239,8 +239,8 @@ $listSolusi = array();
  //print_r($hasilAkhir);
 
 
-   
- 
+
+
 
 
 
@@ -278,7 +278,7 @@ $listSolusi = array();
             <th class="th-lg">Rank</th>
               <th class="th-lg">Nama Penyakit</th>
               <th class="th-lg">nilai</th>
-              
+
 
             </tr>
           </thead>
@@ -304,9 +304,9 @@ $listSolusi = array();
      <button type="submit" class="btn btn-success btn-block">SIMPAN ANALISA</button>
 </form>
  <!--  <?php foreach ($x as $item) {
- 
+
       echo $item['Penyakit2']."<br>";
-    
+
     } ?>  -->
 
    <!--  <?php print_r($x); ?> -->

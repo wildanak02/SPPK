@@ -47,7 +47,7 @@ class HasilAnalisa
 		foreach ($req as $item) {
 			$list[]=array(
 				'kodeAnalisa'=>$item['jumlahAnalisa'],
-				
+
 
 				);
 		}
@@ -73,7 +73,7 @@ class HasilAnalisa
 				'idCocok'=>$item['idCocok'],
 				'idGejala'=>$item['idGejala'],
 				'idPenyakit'=>$item["idPenyakit"]
-				
+
 
 				);
 		}
@@ -131,20 +131,20 @@ class HasilAnalisa
 		$list=[];
 		$list=$checkGejala;
 
-		
-	
+
+
 			return $list;
-		
 
 
-		
+
+
 	}
 
 	public static function simpanHasilAnalisa($kodeAnalisa,$namaAyam,$tanggalAnalisa,$hasil){
-
+		$sesi=$_SESSION['login'];
 		$db = DB::getInstance();
 		$req = $db->query("INSERT INTO analisa
-			VALUES (NULL,5,'".$kodeAnalisa."','".$namaAyam."','".$tanggalAnalisa."','".$hasil."');
+			VALUES (NULL,'".$sesi."','".$kodeAnalisa."','".$namaAyam."','".$tanggalAnalisa."','".$hasil."');
 			");
 
 		return $req;
