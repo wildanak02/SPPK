@@ -60,8 +60,7 @@ function call($controller, $action){
 $controllers = array('Login' => ['home','authentication'],
 'Home' => ['home','homeAdmin'],
 'Register' => ['home','register'],
-
-                     'Profile' => ['home','editUser'],
+'Profile' => ['home','editUser'],
 'Analisa' => ['home','hasilAnalisa'],
 'Gejala' => ['home','tambahGejala','editGejala','hapusGejala'],
 'Penyakit' => ['home','tambahPenyakit','editPenyakit','hapusPenyakit'],

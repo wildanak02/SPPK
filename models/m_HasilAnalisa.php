@@ -127,6 +127,25 @@ class HasilAnalisa
 		}
 	}
 
+	public static function jumlahGejala(){
+		$list;
+
+		$db = DB::getInstance();
+
+		$req = $db->query("SELECT COUNT(gejala) as jumlahGejala FROM gejala ");
+
+
+		foreach ($req as $item) {
+			$list=$item['jumlahGejala'];
+		}
+		if (isset($list)) {
+			return $list;
+		} else {
+			return null;
+		}
+	}
+
+
 	public static function checkGejala($checkGejala){
 		$list=[];
 		$list=$checkGejala;

@@ -24,6 +24,7 @@ class HasilAnalisaController
 		// $namaAyam=$_POST["namaAyam"];
 
 		$listGejala=HasilAnalisa::listGejala();
+		$jumlahGejala=HasilAnalisa::jumlahGejala();
 
 	/*	foreach ($jumlahPenyakit as $item) {
 			$jumlahP=$item["jumlahPenyakit"];
@@ -69,7 +70,7 @@ class HasilAnalisaController
 
 
 		//require_once('views/v_HasilAnalisa.php');
-		header("location:index.php?controller=Analisa&action=home");
+		header("location:index.php?controller=Analisa&action=home&success= Analisa berhasil disimpan!");
 	}
 
 
